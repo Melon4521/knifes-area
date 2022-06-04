@@ -95,3 +95,52 @@ if (menuBurger) {
         document.body.classList.toggle('_lock')
     });
 };
+
+// Modal windows
+
+const modals = document.querySelectorAll(".modal");
+const openModals = document.querySelectorAll(".open-modal[data-open]");
+const closeModals = document.querySelectorAll(".modal__close[data-close]");
+
+if (openModals.length > 0 && modals.length > 0) {
+    openModals.forEach((openModal) =>  {
+        openModal.addEventListener('click', openModalWindow);
+    });
+}
+
+if (closeModals.length > 0 && modals.length > 0) {
+    closeModals.forEach((closeModal) =>  {
+        closeModal.addEventListener('click', closeModalWindow);
+    });
+}
+
+function openModalWindow(e) {
+    e.preventDefault();
+    const dataAtribute = this.dataset.open;
+
+    if (document.querySelector(dataAtribute)) {
+        if (menuBody.classList.contains('_active') && menuBurger.classList.contains('_active')) {
+            menuBody.classList.remove('_active');
+            menuBurger.classList.remove('_active');
+        }
+
+        const modalWindow = document.querySelector(dataAtribute)
+        modalWindow.classList.add('_active');
+        const htmlElem = document.documentElement
+        document.body.style.paddingRight = window.innerWidth - htmlElem.clientWidth + 'px';
+        document.querySelector('.header').style.paddingRight = window.innerWidth - htmlElem.clientWidth + 'px';
+        document.body.classList.add("_lock");
+    }
+};
+
+function closeModalWindow() {
+    const dataAtribute = this.dataset.close;
+
+    if (document.querySelector(dataAtribute)) {
+        const modalWindow = document.querySelector(dataAtribute)
+        modalWindow.classList.remove('_active');
+        document.body.classList.remove("_lock");
+        document.querySelector('.header').style.paddingRight = '0px';
+        document.body.style.paddingRight = '0px';
+    }
+}
