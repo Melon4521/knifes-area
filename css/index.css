@@ -44,6 +44,75 @@ body{
     flex: 1 1 auto;
 }
 
+/* === Служебные классы или события === */
+
+body._lock {
+    overflow: hidden;
+}
+
+/* Саб-лист меню при наведении (ПК) */
+
+body._pc .menu__list > li:hover .menu__sub-list {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transition: all .4s ease;
+}
+
+body._touch .menu__list > li{
+    display: flex;
+    align-items: center;
+}
+
+/* Саб-лист меню при нажатии (Тач-скрин) */
+
+body._touch .menu__list > li._active .menu__sub-list {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transition: all .4s ease;
+}
+
+/* Анимация стрелки при нажатии */
+
+body._touch .menu__list > li._active .menu__arrow {
+    transition: transform .4s ease;
+    transform: rotate(-180deg);
+}
+
+body._touch .menu__link {
+    flex: 1 1 auto;
+}
+
+/* Стили стрелки */
+
+body._touch .menu__arrow {
+    display: block;
+    width: 0;
+    height: 0;
+    transition: transform .3s ease;
+    margin-left: 7px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 11px solid #fff;
+}
+
+/* Анимация при скролле */
+
+._scroll-anim {
+    transition: all 1s ease;
+    transform: translate(0px, 50%);
+    opacity: 0;
+}
+
+._scroll-anim._scroll-anim__active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 1s ease;
+}
+
 /* МЕНЮ НАВИГАЦИИ + БУРГЕР */
 
 .header {
@@ -128,61 +197,6 @@ body{
 
 .menu__arrow {
     display: none;
-}
-
-/* === Служебные классы или события === */
-
-body._lock {
-    overflow: hidden;
-}
-
-/* Саб-лист меню при наведении (ПК) */
-
-body._pc .menu__list > li:hover .menu__sub-list {
-    transform: translate(0px, 0px);
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-    transition: all .4s ease;
-}
-
-body._touch .menu__list > li{
-    display: flex;
-    align-items: center;
-}
-
-/* Саб-лист меню при нажатии (Тач-скрин) */
-
-body._touch .menu__list > li._active .menu__sub-list {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-    transition: all .4s ease;
-}
-
-/* Анимация стрелки при нажатии */
-
-body._touch .menu__list > li._active .menu__arrow {
-    transition: transform .4s ease;
-    transform: rotate(-180deg);
-}
-
-body._touch .menu__link {
-    flex: 1 1 auto;
-}
-
-/* Стили стрелки */
-
-body._touch .menu__arrow {
-    display: block;
-    width: 0;
-    height: 0;
-    transition: transform .3s ease;
-    margin-left: 7px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 11px solid #fff;
 }
 
 @media (min-width: 767px) {
@@ -339,37 +353,65 @@ body._touch .menu__arrow {
 .hello-img {
     padding-top: 80px;
     width: 100%;
-    height: 700px;
-    background: url("../img/storeimg/main/fullscreen-image2.jpg");
+    height: 100vh;
+    background: url("../img/storeimg/main/fullscreen-image3.jpg");
     background-position: center;
     background-size: cover;
+    position: relative;
+}
+
+.hello-img__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: inherit;
+    transition: all .6s ease;
+}
+
+body._touch .hello-img__layer {
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.hello-img__layer:hover {
+    transition: all .8s ease;
+    background-color: rgba(0, 0, 0, .7);
 }
 
 .hello-img__body {
+    padding-left: 20px;
     color: #fff;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 .hello-img__title {
-    padding-top: 170px;
+    transition: all .7s;
+    padding-top: 270px;
     width: 100%;
     font-size: 35px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: 900;
-    text-shadow: 0px 1px 10px rgba(0, 0, 0, .4);
+    font-weight: 500;
+    font-family: 'Bitter', serif;
+    letter-spacing: 13px;
 }
 
 .hello-img__sub-title {
-    font-weight: 500;
-    padding-top: 40px;
+    transition: all .7s;
+    font-weight: 400;
+    padding-top: 20px;
     font-size: 20px;
     width: 100%;
-    text-shadow: 0px 1px 15px rgba(0, 0, 0, .6);
+    letter-spacing: 5px;
+    line-height: 170%;
+}
+
+.hello-img__sub-title._scroll-anim__active {
+    transition-delay: .5s;
 }
 
 .hello-img__text {
@@ -378,6 +420,19 @@ body._touch .menu__arrow {
     line-height: 160%;
     width: 65%;
     text-shadow: 0px 1px 15px rgba(0, 0, 0, .6);
+}
+
+.social {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15px;
+}
+
+.social__link {
+    font-size: 23px;
+    color: #fff;
+    padding: 0 5px;
 }
 
 /* ================================================= */
@@ -415,6 +470,10 @@ body._touch .menu__arrow {
     font-weight: 400;
 }
 
+.about-us__text._scroll-anim__active {
+    transition-delay: .1s;
+}
+
 /* ================================================= */
 
 /* Partners */
@@ -445,6 +504,15 @@ body._touch .menu__arrow {
     width: 33.33333%;
     padding: 0 10px;
 }
+
+.partners__item._scroll-anim__active:nth-child(2) {
+    transition-delay: .2s;
+}
+
+.partners__item._scroll-anim__active:last-child {
+    transition-delay: .4s;
+}
+
 
 .partners__name {
     font-size: 25px;
@@ -551,6 +619,8 @@ body._touch .menu__arrow {
     line-height: 140%;
 }
 
+/* ================================================= */
+
 /* Modal window with contact information */
 
 .modal-contacts {
@@ -578,17 +648,21 @@ body._touch .menu__arrow {
 }
 
 .modal-contacts__body {
-    padding: 100px 50px;
-    text-align: center;
+    padding: 60px 50px;
     color: #fff;
 }
 
 .modal-contacts__title {
-    font-size: 35px;
-    margin-bottom: 30px;
-}
-.modal-contacts__phone {
     font-size: 25px;
+    margin-bottom: 15px;
+}
+.modal-contacts__text {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.modal-contacts__text:last-child {
+    margin-bottom: 0px;
 }
 
 .modal-inner {
@@ -676,7 +750,7 @@ body._touch .menu__arrow {
     /* Hello-image */
 
     .hello-img__title {
-        padding-top: calc(100px + (170 - 100) * ((100vw - 320px) / (1200 - 320)));;
+        padding-top: calc(200px + (270 - 200) * ((100vw - 320px) / (1200 - 320)));;
         font-size: calc(25px + (35 - 25) * ((100vw - 320px) / (1200 - 320)));
     }
 

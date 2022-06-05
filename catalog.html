@@ -5,15 +5,22 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Тестовый магазин EDU INTERMIR.RU на JavaScript</title>
-	<link rel="icon" href="https://edu.intermir.ru/img/logo.png" type="image/png">
+	<title>Knifes-area - Каталог</title>
+	<link rel="icon" href="img/storeimg/logo.png" type="image/png">
 	<meta name="description" content="Тестовый магазин EDU INTERMIR.RU Разработка методических материалов для IT-школ, кружков программирования и самостоятельного изучения детьми и взрослыми.">
 	<meta name="keywords" content="ИнтерМИР, InterМИР, IT-компания, Digital, space, ИнтерМИР, InterМИР, инновации, курсы программирования, онлайн школа программирования, JS, С#, Java, Python, Godot, Создание сайтов, Программирование для детей и взрослых, web-разработка,">
 
 	<meta property="og:title" content="Тестовый магазин EDU INTERMIR.RU на JavaScript ИнтерМИР EDU. Разработка IT-курсов"/>
 	<meta property="og:description" content="Разработка методических материалов для IT-школ, кружков программирования и самостоятельного изучения детьми и взрослыми." />
-	<!-- Font-awesome -->
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	
+	<!-- Google-fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&family=Bitter:wght@500&display=swap" rel="stylesheet">
+	
+	<!-- Font-Awesome -->
+    <script src="https://kit.fontawesome.com/0659859d2a.js" crossorigin="anonymous"></script>
+	
 	<!-- Bootstrap @5.1.3 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -23,12 +30,14 @@
 
 <body>
 
+<div class="wrapper">
+
 	<!--  Окно корзины  -->
 	<div class="modal" id="windowcart" tabindex="-1" aria-labelledby="windowcartLabel" aria-hidden="true">
 		<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content" style="background-color:PowderBlue">
 				<div class="modal-header">
-					<h5 class="modal-title text-dark" id="windowcartLabel"><i class="fa fa-shopping-basket text-danger mx-2" style="font-size: 1.3em; margin-top: 3px;"></i> Kорзинa</h5>
+					<h5 class="modal-title text-dark" id="windowcartLabel"><i class="fa-solid fa-cart-shopping text-danger mx-2" style="font-size: 1.3em; margin-top: 3px;"></i> Kорзинa</h5>
 					<button type="button" class="btn-close font-weight-bold" id="close1" aria-label="Close"></button>
 				</div>
 				<div class="modal-body" style="background-color: LightCyan">
@@ -57,197 +66,288 @@
 		</div> <!-- .modal-dialog -->
 	</div> <!-- .modal -->
 
-
-
 	<!--  Header  -->
-	<header class=" mb-5 fixed-top">
+
+	<header class="header">
+		<section class="header__container">
+			<a class="header__logo" href="#"><img src="img/storeimg/logo.png" alt=""></a>
+			<div class="header__menu menu">
+				<div class="menu__burger">
+					<span></span>
+				</div>
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li>
+							<a href="#" class="menu__link" style="text-decoration: underline;">О нас</a>
+						</li>
+
+						<li>
+							<a href="#" class="menu__link menu__link-sub">Партнеры</a>
+							<span class="menu__arrow"></span>
+							<ul class="menu__sub-list">
+								<li>
+									<a data-goto=".partners" href="#" class="menu__sub-link">Все</a>
+								</li>
+								<li>
+									<a data-goto=".partners__item1" href="#" class="menu__sub-link">Tefal</a>
+								</li>
+								<li>
+									<a data-goto=".partners__item2" href="#" class="menu__sub-link">Arcos</a>
+								</li>
+								<li>
+									<a data-goto=".partners__item3" href="#" class="menu__sub-link">Global</a>
+								</li>
+							</ul>
+						</li>
+
+						<li><a href="catalog.html" class="menu__link">Каталог</a></li>
+
+						<li>
+							<a href="#" class="menu__link menu__link-sub">Соц. Сети</a>
+							<span class="menu__arrow"></span>
+							<ul class="menu__sub-list">
+								<li>
+									<a href="https://www.instagram.com/intermir_space/" class="menu__sub-link"><i class="fa-brands fa-instagram"></i> Instagram</a>
+								</li>
+								<li>
+									<a href="https://vk.com/intermir_space" class="menu__sub-link"><i class="fa-brands fa-vk"></i> ВКонтакте</a>
+								</li>
+							</ul>
+						</li>
+
+						<li><a data-open=".modal-contacts" href="#" class="menu__link open-modal">Контакты</a></li>
+						
+						<li>
+							<button type="button" class="btn btn-none" data-bs-target="#windowcart" style="padding: 0;">
+								<div class="mr-4 menu__link">
+									<i class="fa-solid fa-cart-shopping mr-5" id="shoppingCart" aria-hidden="true" style="color: #fff;" title="Оформи заказ!"> Корзина</i>
+								</div>
+							</button>
+						</li>
+
+					</ul>
+				</nav>
+			</div> <!-- .header__menu menu -->
+		</section> <!-- .header__container -->
+	</header>
+
+	<!-- <header class=" mb-5 fixed-top">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<!-- Меню навигации -->
-					<nav class="navbar navbar-expand-lg navbar-dark pb-1 " style="background-color: none;  ">
+					<nav class="navbar navbar-expand-lg navbar-pb-1 " style="background-color: none;  ">
 						<div class="container d-inline-flex justify-content-beetwen">
 							<div>
 								<a class="navbar-brand" href="index.html" data-placement="top" title="На главную"><img class="logo" src="img/storeimg/logo.png"></a>
 							</div>
-							<div class="mx-2 __droppable">
+							<div class="mx-2">
 								<button type="button" class="btn btn-none" data-bs-target="#windowcart">
 									<div class="mr-4">
 										<i class=" fa fa-shopping-basket text-danger  mr-5" id="shoppingCart" aria-hidden="true" style="font-size: 1.3em; margin-top: 3px;" title="Оформи заказ!"></i>
 									</div>
 								</button>
 							</div>
-						</div> <!-- .container -->
+						</div> 
 					</nav>
 
-				</div> <!-- .col-12 -->
-			</div> <!-- .row -->
+				</div> 
+			</div> 
+		</div>
+	</header> -->
+
+	<main class="main">
+	
+		<!--  Header Slider  -->
+		<div class="slider">
+			<div class="slider-item">
+				<img class="slider-item__img" src="img/storeimg/main/header-1_pressed.jpg">
+			</div>
+			
+			<div class="slider-item">
+				<img class="slider-item__img" src="img/storeimg/main/header-2_pressed.jfif">
+			</div>
+			
+			<div class="slider-item">
+				<img class="slider-item__img" src="img/storeimg/main/header-3_pressed.jpg">
+			</div>
+			
+			<a href="#" class="slider__previous" title="Предыдущая">&#10094;</a>
+			<a href="#" class="slider__next" title="Следующая">&#10095;</a>
+			
+			<div class="slider__dots">
+				<span class="slider-dot" data-slide="1"></span>
+				<span class="slider-dot" data-slide="2"></span>
+				<span class="slider-dot" data-slide="3"></span>
+			</div>
+		</div>
+
+		<!--  Блок с карточками товаров  -->
+
+		<div class="container card-container">
+
+			<div class="row justify-content-around">
+
+				<div class="col-md-3 card bg-light border-dark m-2 p-2">
+					<div class="img-card_container">
+						<img id="85-1" src="img/storeimg/catalog/85-1.jpg" class="img-fluid card-img-top border">
+						<div class="sliders_elem-back"></div>
+						<div class="sliders_elem-next"></div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Nike Air Синий</h5>
+						<p class="card-text-description">Цена: <span class="card-text">9900</span> руб.</p>
+						<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
+						<div class="btn2Cart-inner">
+							<button data-id="1" data-price="9990" data-name="Nike Air Синий" class="btn2Cart">Купить</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 card bg-light border-dark m-2 p-2">
+					<div class="img-card_container">
+						<img id="85-1" src="img/storeimg/catalog/86-1.jpg" class="img-fluid card-img-top border">
+						<div class="sliders_elem-back"></div>
+						<div class="sliders_elem-next"></div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Nike Air Зеленый</h5>
+						<p class="card-text-description">Цена: <span class="card-text">10990</span> руб.</p>
+						<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45</p>
+						<button data-id="2" data-price="10990" data-name="Nike Air Зеленый" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="img-card_container">
+						<img class="img-fluid card-img-top border" id="85-1" src="img/storeimg/catalog/87-1.jpg">
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Nike AIR Big Стандарт</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 18 см, серия Opera</p>
+						<p class="card-text-description">Цена: <span class="card-text">11999</span> руб.</p>
+						<button data-id="3" data-price="11999" data-name="Nike AIR Big Стандарт" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="row justify-content-around">
+				<div class="col-md-3 card bg-light border-dark m-2 p-2">
+					<div class="img-card_container">
+						<img id="85-1" src="img/storeimg/catalog/88-1.jpg" class="img-fluid card-img-top border">
+						<div class="sliders_elem-back"></div>
+						<div class="sliders_elem-next"></div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Nike AIR Big France</h5>
+						<p class="card-text-description">Цена: <span class="card-text">18599</span> руб.</p>
+						<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
+						<button data-id="4" data-price="18599" data-name="Nike AIR Big France" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+
+				<div class="col-md-3 card bg-light border-dark m-2 p-2">
+					<div class="img-card_container">
+						<img id="85-1" src="img/storeimg/catalog/89-1.jpg" class="img-fluid card-img-top border">
+						<div class="sliders_elem-back"></div>
+						<div class="sliders_elem-next"></div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Nike Air Jordan High Серые</h5>
+						<p class="card-text-description">Цена: <span class="card-text">9599</span> руб.</p>
+						<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
+						<button data-id="5" data-price="9599" data-name="Nike Air Jordan High Серые" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+
+				<div class="col-md-3 card bg-light border-dark m-2 p-2">
+					<div class="img-card_container">
+						<img id="85-1" src="img/storeimg/catalog/90-1.jpg" class="img-fluid card-img-top border">
+						<div class="sliders_elem-back"></div>
+						<div class="sliders_elem-next"></div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Nike AIR Big Серо-Золотой</h5>
+						<p class="card-text-description">Цена: <span class="card-text">12699</span> руб.</p>
+						<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
+						<button data-id="6" data-price="12699" data-name="Nike AIR Big Серо-Золотой" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+			</div>
 		</div> <!-- .container -->
-	</header>
-	
-	<!--  Header Slider  -->
-	<div class="slider">
-		<div class="slider-item">
-			<img class="slider-item__img" src="img/storeimg/main/header-1_pressed.jpg">
-		</div>
-		
-		<div class="slider-item">
-			<img class="slider-item__img" src="img/storeimg/main/header-2_pressed.jfif">
-		</div>
-		
-		<div class="slider-item">
-			<img class="slider-item__img" src="img/storeimg/main/header-3_pressed.jpg">
-		</div>
-		
-		<a href="#" class="slider__previous" title="Предыдущая">&#10094;</a>
-		<a href="#" class="slider__next" title="Следующая">&#10095;</a>
-		
-		<div class="slider__dots">
-			<span class="slider-dot" data-slide="1"></span>
-			<span class="slider-dot" data-slide="2"></span>
-			<span class="slider-dot" data-slide="3"></span>
-		</div>
-	</div>
+		<!--  Блок с карточками товаров (конец)  -->
 
-	<!--  Блок с карточками товаров  -->
-	<div class="container card-container">
-		<div class="row justify-content-around">
-			<div class="col-md-3 card bg-light border-dark m-2 p-2">
-				<div class="img-card_container">
-					<img id="85-1" src="img/storeimg/catalog/85-1.jpg" class="img-fluid card-img-top border">
-					<div class="sliders_elem-back"></div>
-					<div class="sliders_elem-next"></div>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title">Nike Air Синий</h5>
-					<p class="card-text-description">Цена: <span class="card-text">9900</span> руб.</p>
-					<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
-					<div class="btn2Cart-inner">
-						<button data-id="1" data-price="9990" data-name="Nike Air Синий" class="btn2Cart">Купить</button>
+		<!--  Окно чат-бота  -->
+		<div class="mainChat-wrapper d-none" id="wrapper">
+			<div class="chat__wrapper">
+				<div class="chat-title__wrap"><img src="img/img-chatbot/Oleg-logo.png" alt=""><span>Виртуальный помощник</span></div>
+				<div class="closeItem" title="Закрыть"></div>
+				<div class="chat__window" id="chat">
+					<div id="bot">
+						<div class="bot">Привет! Меня зовут Олег, я ваш Виртуальный Помощник. Какой у вас вопрос?<span class="message-time time"></span></div>
+						<div class="bot">Введите номер отдела (1 - Отдел продаж, 2 - Сервис, 3 - Бухгалтерия) или задайте свой вопрос.<span class="message-time time"></span></div>
 					</div>
 				</div>
-			</div>
-
-			<div class="col-md-3 card bg-light border-dark m-2 p-2">
-				<div class="img-card_container">
-					<img id="85-1" src="img/storeimg/catalog/86-1.jpg" class="img-fluid card-img-top border">
-					<div class="sliders_elem-back"></div>
-					<div class="sliders_elem-next"></div>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title">Nike Air Зеленый</h5>
-					<p class="card-text-description">Цена: <span class="card-text">10990</span> руб.</p>
-					<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
-					<button data-id="2" data-price="10990" data-name="Nike Air Зеленый" class="btn2Cart">Купить</button>
-				</div>
-			</div>
-
-			<div class="col-md-3 card bg-light border-dark m-2 p-2">
-				<div class="img-card_container">
-					<img id="85-1" src="img/storeimg/catalog/87-1.jpg" class="img-fluid card-img-top border">
-					<div class="sliders_elem-back"></div>
-					<div class="sliders_elem-next"></div>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title">Nike AIR Big Стандарт</h5>
-					<p class="card-text-description">Цена: <span class="card-text">11999</span> руб.</p>
-					<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
-					<button data-id="3" data-price="11999" data-name="Nike AIR Big Стандарт" class="btn2Cart">Купить</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="row justify-content-around">
-			<div class="col-md-3 card bg-light border-dark m-2 p-2">
-				<div class="img-card_container">
-					<img id="85-1" src="img/storeimg/catalog/88-1.jpg" class="img-fluid card-img-top border">
-					<div class="sliders_elem-back"></div>
-					<div class="sliders_elem-next"></div>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title">Nike AIR Big France</h5>
-					<p class="card-text-description">Цена: <span class="card-text">18599</span> руб.</p>
-					<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
-					<button data-id="4" data-price="18599" data-name="Nike AIR Big France" class="btn2Cart">Купить</button>
-				</div>
-			</div>
-
-			<div class="col-md-3 card bg-light border-dark m-2 p-2">
-				<div class="img-card_container">
-					<img id="85-1" src="img/storeimg/catalog/89-1.jpg" class="img-fluid card-img-top border">
-					<div class="sliders_elem-back"></div>
-					<div class="sliders_elem-next"></div>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title">Nike Air Jordan High Серые</h5>
-					<p class="card-text-description">Цена: <span class="card-text">9599</span> руб.</p>
-					<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
-					<button data-id="5" data-price="9599" data-name="Nike Air Jordan High Серые" class="btn2Cart">Купить</button>
-				</div>
-			</div>
-
-			<div class="col-md-3 card bg-light border-dark m-2 p-2">
-				<div class="img-card_container">
-					<img id="85-1" src="img/storeimg/catalog/90-1.jpg" class="img-fluid card-img-top border">
-					<div class="sliders_elem-back"></div>
-					<div class="sliders_elem-next"></div>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title">Nike AIR Big Серо-Золотой</h5>
-					<p class="card-text-description">Цена: <span class="card-text">12699</span> руб.</p>
-					<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
-					<button data-id="6" data-price="12699" data-name="Nike AIR Big Серо-Золотой" class="btn2Cart">Купить</button>
-				</div>
-			</div>
-		</div>
-	</div> <!-- .container -->
-	<!--  Блок с карточками товаров (конец)  -->
-
-	<!--  Окно чат-бота  -->
-	<div class="mainChat-wrapper d-none" id="wrapper">
-		<div class="chat__wrapper">
-			<div class="chat-title__wrap"><img src="img/img-chatbot/Oleg-logo.png" alt=""><span>Виртуальный помощник</span></div>
-			<div class="closeItem" title="Закрыть"></div>
-			<div class="chat__window" id="chat">
-				<div id="bot">
-					<div class="bot">Привет! Меня зовут Олег, я ваш Виртуальный Помощник. Какой у вас вопрос?<span class="message-time time"></span></div>
-					<div class="bot">Введите номер отдела (1 - Отдел продаж, 2 - Сервис, 3 - Бухгалтерия) или задайте свой вопрос.<span class="message-time time"></span></div>
-				</div>
-			</div>
-			<form>
-				<div class="input-inner">
-					<input type="text" placeholder="Ваше сообщение..." id="user-text" class="user-text">
-					<button type="submit" onclick="return false" id="send-btn" title="Отправить" class="send-btn"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-				</div>
-			</form>
-		</div>
-	</div>
-
-	<!--  Cookie-alert  -->
-	<div class="cookie-alert invisible">
-		<div class="cookie__text">Мы используем файлы cookie для наилучшего взаимодействия. Вы можете узнать больше о том, какие файлы cookie мы используем, в нашей <a href="https://yandex.ru/legal/cookies_policy/">политике использования файлов cookie.</a></div>
-		<div class="cookie__content">
-			<button class="cookie__close" id="cookie_alertClose">Принять Cookie</button>
-		</div>
-	</div>
-
-	<!--  Footer  -->
-	<footer class=" mt-5 ">
-		<div class="container-fluid">
-			<div class="row" style="background-color: black; ">
-				<div class="col-12">
-					<div class="container d-inline-flex justify-content-center">
-						<span class="border border-info m-4 p-3"><a href="index.html" data-placement="top" title="Home"><i class="fa fa-home" style="color: darkorange"></i></a></span>
-						<span class="border border-info m-4 p-3"><a href="https://vk.com/intermir_space" data-placement="top" title="Vk"><i class="fa fa-vk" style="color: darkorange"></i></a></span>
-						<span class="border border-info m-4 p-3"><a href="https://www.instagram.com/intermir_space/" data-placement="top" title="Instagram" style="color: darkorange"><i class="fa fa-instagram"></i></a></span>
+				<form>
+					<div class="input-inner">
+						<input type="text" placeholder="Ваше сообщение..." id="user-text" class="user-text">
+						<button type="submit" onclick="return false" id="send-btn" title="Отправить" class="send-btn"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
 					</div>
-
-				</div>
+				</form>
 			</div>
 		</div>
+
+		<!--  Cookie-alert  -->
+		<div class="cookie-alert invisible">
+			<div class="cookie__text">Мы используем файлы cookie для наилучшего взаимодействия. Вы можете узнать больше о том, какие файлы cookie мы используем, в нашей <a href="https://yandex.ru/legal/cookies_policy/">политике использования файлов cookie.</a></div>
+			<div class="cookie__content">
+				<button class="cookie__close" id="cookie_alertClose">Принять Cookie</button>
+			</div>
+		</div>
+
+    </main>
+
+	<!-- Footer -->
+
+	<footer class="footer">
+		<section class="container">
+			<div class="footer__body">
+				<div class="footer__item">
+					<div class="footer__logo">
+						<a href="#">
+							<img src="img/storeimg/logo.png" alt="">
+						</a>
+					</div>
+					<p style="font-size: 13px;">
+						&#169; Knifes-area 2022<br>
+						Все права защищены
+					</p>
+				</div>
+
+				<div class="footer__item">
+					<div class="footer__title">Компания</div>
+					<a data-goto=".about-us" href="#" class="menu__link footer__link">О нас</a>
+					<a data-goto=".partners" href="#" class="menu__link footer__link">Партнеры</a>
+					<a data-open=".modal-contacts" href="#" class="footer__link open-modal">Связаться с нами</a>
+				</div>
+
+				<div class="footer__item">
+					<div class="footer__title">Навигация</div>
+					<a href="index.html" class="footer__link">Главная</a>
+					<a href="catalog.html" class="footer__link">Каталог</a>
+				</div>
+
+				<div class="footer__item">
+					<div class="footer__title">Соц. Сети</div>
+					<a href="https://www.instagram.com/intermir_space/" class="footer__link"><i class="fa-brands fa-instagram"></i> Instagram</a>
+					<a href="https://vk.com/intermir_space" class="footer__link"><i class="fa-brands fa-vk"></i> ВКонтакте</a>
+				</div>
+
+			</div>
+		</section>
 	</footer>
-	
-<!-- =============== -->
+
+</div>
 
 	<!--  Скрипты  -->
 	<script src="js-php/second-page/chatbot.js"></script>
