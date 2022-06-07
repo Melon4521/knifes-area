@@ -737,7 +737,7 @@ body._touch .menu__arrow {
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, .4);
 }
 
-._active, .card__slider-dot:hover {
+._slider-active, .card__slider-dot:hover {
 	background-color: rgba(0, 0, 0, .6);
 	cursor: pointer;
 }

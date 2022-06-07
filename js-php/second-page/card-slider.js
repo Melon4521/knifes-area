@@ -28,11 +28,11 @@ for (let i = 0; i < cardSliders.length; i++) {
 
 		for (let i = 0; i < cardSlides.length; i++) {
 			cardSlides[i].style.display = "none";
-			cardDots[i].className = cardDots[i].className.replace(" _active", "");
+			cardDots[i].className = cardDots[i].className.replace(" _slider-active", "");
 		}
 
 		cardSlides[cardSlideIndex - 1].style.display = "block";
-		cardDots[cardSlideIndex - 1].className += " _active";
+		cardDots[cardSlideIndex - 1].className += " _slider-active";
 
 	}
 
