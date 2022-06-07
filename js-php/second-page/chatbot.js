@@ -10,21 +10,26 @@ let chatArea = document.getElementById("chat"),
 input.focus();
 
 callChat.classList.add('invisible');
+callChat.classList.add('btn-callbot');
+callChat.title = "Виртуальный помощник"
 document.body.append(callChat);
 
 function callButton_in() {
-	callChat.classList.add('btn-callbot');
+	if (!callChat.classList.contains('btn-callbot')) {
+		callChat.classList.add('btn-callbot');
+	}
 	callChat.classList.remove('invisible');
 	callChat.classList.add('visible');
 }
 
-call_in = setTimeout(callButton_in, 10000)
+call_in = setTimeout(callButton_in, 5000)
 
 callChat.addEventListener('click', () => {
 	document.getElementById('wrapper').classList.remove("d-none");
 	const prevent = ev => ev.preventDefault();
-	document.getElementsByTagName('body')[0].style.overflowY = "hidden";
 	document.getElementsByTagName('body')[0].style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px';
+	document.querySelector('.header').style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px';
+	document.getElementsByTagName('body')[0].style.overflowY = "hidden";
 	callChat.classList.add('invisible');
 	document.removeEventListener('wheel', prevent)
 })
@@ -33,6 +38,7 @@ closeChat.addEventListener('click', () => {
 	document.getElementById("wrapper").classList.add("d-none");
 	const prevent = ev => ev.preventDefault();
 	document.getElementsByTagName('body')[0].style.overflowY = "scroll";
+	document.querySelector('.header').style.paddingRight = '0px';
 	document.getElementsByTagName('body')[0].style.paddingRight = "0";
 	callChat.classList.remove('invisible');
 	callChat.classList.add('visible');

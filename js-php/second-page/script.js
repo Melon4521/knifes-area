@@ -99,7 +99,7 @@ if (menuBurger) {
 
 // Modal windows
 
-const modals = document.querySelectorAll(".modal");
+const modals = document.querySelectorAll(".modal-window");
 const openModals = document.querySelectorAll(".open-modal[data-open]");
 const closeModals = document.querySelectorAll(".modal__close[data-close]");
 

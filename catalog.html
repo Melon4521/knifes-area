@@ -37,7 +37,7 @@
 		<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content" style="background-color:PowderBlue">
 				<div class="modal-header">
-					<h5 class="modal-title text-dark" id="windowcartLabel"><i class="fa-solid fa-cart-shopping text-danger mx-2" style="font-size: 1.3em; margin-top: 3px;"></i> Kорзинa</h5>
+					<h5 class="modal-title text-dark" id="windowcartLabel"><i class="fa-solid fa-cart-shopping text-danger mx-2" style="font-size: 1.2em; margin-top: 3px;"></i> Kорзинa</h5>
 					<button type="button" class="btn-close font-weight-bold" id="close1" aria-label="Close"></button>
 				</div>
 				<div class="modal-body" style="background-color: LightCyan">
@@ -67,7 +67,6 @@
 	</div> <!-- .modal -->
 
 	<!--  Header  -->
-
 	<header class="header">
 		<section class="header__container">
 			<a class="header__logo" href="#"><img src="img/storeimg/logo.png" alt=""></a>
@@ -78,29 +77,28 @@
 				<nav class="menu__body">
 					<ul class="menu__list">
 						<li>
-							<a href="#" class="menu__link" style="text-decoration: underline;">О нас</a>
+							<a href="index.html" class="menu__link">Главная</a>
 						</li>
 
 						<li>
-							<a href="#" class="menu__link menu__link-sub">Партнеры</a>
+							<a href="#" style="text-decoration: underline;" class="menu__link">Каталог</a>
+						</li>
+
+						<li>
+							<a href="#" class="menu__link menu__link-sub">Разделы</a>
 							<span class="menu__arrow"></span>
 							<ul class="menu__sub-list">
 								<li>
-									<a data-goto=".partners" href="#" class="menu__sub-link">Все</a>
+									<a data-goto=".cards-section__1" href="#" class="menu__sub-link">Ножи для хлеба</a>
 								</li>
 								<li>
-									<a data-goto=".partners__item1" href="#" class="menu__sub-link">Tefal</a>
+									<a data-goto=".cards-section__2" href="#" class="menu__sub-link">Ножи для нарезки</a>
 								</li>
 								<li>
-									<a data-goto=".partners__item2" href="#" class="menu__sub-link">Arcos</a>
-								</li>
-								<li>
-									<a data-goto=".partners__item3" href="#" class="menu__sub-link">Global</a>
+									<a data-goto=".cards-section__3" href="#" class="menu__sub-link">Поварские ножи</a>
 								</li>
 							</ul>
 						</li>
-
-						<li><a href="catalog.html" class="menu__link">Каталог</a></li>
 
 						<li>
 							<a href="#" class="menu__link menu__link-sub">Соц. Сети</a>
@@ -115,7 +113,9 @@
 							</ul>
 						</li>
 
-						<li><a data-open=".modal-contacts" href="#" class="menu__link open-modal">Контакты</a></li>
+						<li>
+							<a data-open=".modal-contacts" href="#" class="menu__link open-modal">Контакты</a>
+						</li>
 						
 						<li>
 							<button type="button" class="btn btn-none" data-bs-target="#windowcart" style="padding: 0;">
@@ -130,30 +130,6 @@
 			</div> <!-- .header__menu menu -->
 		</section> <!-- .header__container -->
 	</header>
-
-	<!-- <header class=" mb-5 fixed-top">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<nav class="navbar navbar-expand-lg navbar-pb-1 " style="background-color: none;  ">
-						<div class="container d-inline-flex justify-content-beetwen">
-							<div>
-								<a class="navbar-brand" href="index.html" data-placement="top" title="На главную"><img class="logo" src="img/storeimg/logo.png"></a>
-							</div>
-							<div class="mx-2">
-								<button type="button" class="btn btn-none" data-bs-target="#windowcart">
-									<div class="mr-4">
-										<i class=" fa fa-shopping-basket text-danger  mr-5" id="shoppingCart" aria-hidden="true" style="font-size: 1.3em; margin-top: 3px;" title="Оформи заказ!"></i>
-									</div>
-								</button>
-							</div>
-						</div> 
-					</nav>
-
-				</div> 
-			</div> 
-		</div>
-	</header> -->
 
 	<main class="main">
 	
@@ -185,95 +161,443 @@
 
 		<div class="container card-container">
 
+			<h2 class="cards-section-title cards-section__1">Ножи для хлеба</h2>
+
 			<div class="row justify-content-around">
 
-				<div class="col-md-3 card bg-light border-dark m-2 p-2">
-					<div class="img-card_container">
-						<img id="85-1" src="img/storeimg/catalog/85-1.jpg" class="img-fluid card-img-top border">
-						<div class="sliders_elem-back"></div>
-						<div class="sliders_elem-next"></div>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Nike Air Синий</h5>
-						<p class="card-text-description">Цена: <span class="card-text">9900</span> руб.</p>
-						<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
-						<div class="btn2Cart-inner">
-							<button data-id="1" data-price="9990" data-name="Nike Air Синий" class="btn2Cart">Купить</button>
+				<!-- Arcos - Нож кухонный для хлеба 20 см, серия Riviera -->
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="card__slider">
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-riviera-20cm-2.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-riviera-20cm-1.jpg">
+						</div>
+							
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
 						</div>
 					</div>
-				</div>
-
-				<div class="col-md-3 card bg-light border-dark m-2 p-2">
-					<div class="img-card_container">
-						<img id="85-1" src="img/storeimg/catalog/86-1.jpg" class="img-fluid card-img-top border">
-						<div class="sliders_elem-back"></div>
-						<div class="sliders_elem-next"></div>
-					</div>
 					<div class="card-body">
-						<h5 class="card-title">Nike Air Зеленый</h5>
-						<p class="card-text-description">Цена: <span class="card-text">10990</span> руб.</p>
-						<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45</p>
-						<button data-id="2" data-price="10990" data-name="Nike Air Зеленый" class="btn2Cart">Купить</button>
+						<h5 class="card-title">Arcos</h5>
+						<h5 class="card-sub__title">Серия: Riviera</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 20 см, серия Riviera, Испания</p>
+						<p class="card-text-description">Цена: <span class="card-text">5690</span> руб.</p>
+						<button data-id="1" data-price="5690" data-name="Arcos Bread-knife 20cm Riviera" class="btn2Cart">Купить</button>
 					</div>
 				</div>
 
+				<!-- Arcos - Нож кухонный для хлеба 18 см, серия Clasica -->
 				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
-					<div class="img-card_container">
-						<img class="img-fluid card-img-top border" id="85-1" src="img/storeimg/catalog/87-1.jpg">
+					<div class="card__slider">
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-clasica-18cm-2.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-clasica-18cm-1.jpg">
+						</div>
+
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-clasica-18cm-3.jpg">
+						</div>
+							
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
+							<span class="card__slider-dot" data-slide="3"></span>
+						</div>
 					</div>
 					<div class="card-body">
-						<h5 class="card-title">Nike AIR Big Стандарт</h5>
-						<p class="card-text-description">Нож кухонный для хлеба 18 см, серия Opera</p>
-						<p class="card-text-description">Цена: <span class="card-text">11999</span> руб.</p>
-						<button data-id="3" data-price="11999" data-name="Nike AIR Big Стандарт" class="btn2Cart">Купить</button>
+						<h5 class="card-title">Arcos</h5>
+						<h5 class="card-sub__title">Серия: Clasica</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 18 см, серия Clasica, Испания</p>
+						<p class="card-text-description">Цена: <span class="card-text">4990</span> руб.</p>
+						<button data-id="2" data-price="4990" data-name="Arcos Bread-knife 18cm Clasica" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+
+				<!-- Arcos - Нож кухонный для хлеба 18 см, серия Opera -->
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="card__slider">
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-opera-18cm-3.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-opera-18cm-1.jpg">
+						</div>
+
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-opera-18cm-2.jpg">
+						</div>
+							
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
+							<span class="card__slider-dot" data-slide="3"></span>
+						</div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Arcos</h5>
+						<h5 class="card-sub__title">Серия: Opera</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 18 см, серия Opera, Испания</p>
+						<p class="card-text-description">Цена: <span class="card-text">6190</span> руб.</p>
+						<button data-id="3" data-price="6190" data-name="Arcos Bread-knife 18cm Opera" class="btn2Cart">Купить</button>
 					</div>
 				</div>
 
 			</div>
 
 			<div class="row justify-content-around">
-				<div class="col-md-3 card bg-light border-dark m-2 p-2">
-					<div class="img-card_container">
-						<img id="85-1" src="img/storeimg/catalog/88-1.jpg" class="img-fluid card-img-top border">
-						<div class="sliders_elem-back"></div>
-						<div class="sliders_elem-next"></div>
+
+				<!-- Arcos - Нож кухонный для хлеба 25 см, серия Universal -->
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="card__slider">
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-universal-25cm-2.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-universal-25cm-1.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-universal-25cm-3.jpg">
+						</div>
+
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
+							<span class="card__slider-dot" data-slide="3"></span>
+						</div>
 					</div>
 					<div class="card-body">
-						<h5 class="card-title">Nike AIR Big France</h5>
-						<p class="card-text-description">Цена: <span class="card-text">18599</span> руб.</p>
-						<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
-						<button data-id="4" data-price="18599" data-name="Nike AIR Big France" class="btn2Cart">Купить</button>
+						<h5 class="card-title">Arcos</h5>
+						<h5 class="card-sub__title">Серия: Universal</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 25 см, серия Universal, Испания</p>
+						<p class="card-text-description">Цена: <span class="card-text">2890</span> руб.</p>
+						<button data-id="4" data-price="2890" data-name="Arcos Bread-knife 25cm Universal" class="btn2Cart">Купить</button>
 					</div>
 				</div>
 
-				<div class="col-md-3 card bg-light border-dark m-2 p-2">
-					<div class="img-card_container">
-						<img id="85-1" src="img/storeimg/catalog/89-1.jpg" class="img-fluid card-img-top border">
-						<div class="sliders_elem-back"></div>
-						<div class="sliders_elem-next"></div>
+				<!-- Arcos - Нож кухонный для хлеба 20 см, серия Riviera Rose -->
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="card__slider">
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-riviera_rose-20cm-1.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-riviera_rose-20cm-2.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/arcos/arcos-bread-riviera_rose-20cm-3.jpg">
+						</div>
+
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
+							<span class="card__slider-dot" data-slide="3"></span>
+						</div>
 					</div>
 					<div class="card-body">
-						<h5 class="card-title">Nike Air Jordan High Серые</h5>
-						<p class="card-text-description">Цена: <span class="card-text">9599</span> руб.</p>
-						<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
-						<button data-id="5" data-price="9599" data-name="Nike Air Jordan High Серые" class="btn2Cart">Купить</button>
+						<h5 class="card-title">Arcos</h5>
+						<h5 class="card-sub__title">Серия: Riviera Rose</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 20 см, серия Riviera Rose, Испания</p>
+						<p class="card-text-description">Цена: <span class="card-text">4790</span> руб.</p>
+						<button data-id="5" data-price="4790" data-name="Arcos Bread-knife 20cm Riviera Rose" class="btn2Cart">Купить</button>
 					</div>
 				</div>
 
-				<div class="col-md-3 card bg-light border-dark m-2 p-2">
-					<div class="img-card_container">
-						<img id="85-1" src="img/storeimg/catalog/90-1.jpg" class="img-fluid card-img-top border">
-						<div class="sliders_elem-back"></div>
-						<div class="sliders_elem-next"></div>
+				<!-- Global - Нож кухонный для хлеба 23 см, серия NI -->
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="card__slider">
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/global/global-bread-ni-23cm-2.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/global/global-bread-ni-23cm-1.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/global/global-bread-ni-21-23cm-3.jpg">
+						</div>
+
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
+							<span class="card__slider-dot" data-slide="3"></span>
+						</div>
 					</div>
 					<div class="card-body">
-						<h5 class="card-title">Nike AIR Big Серо-Золотой</h5>
-						<p class="card-text-description">Цена: <span class="card-text">12699</span> руб.</p>
-						<p class="card-text-description">Размеры в наличии:<br> 37 38 39 40 42 43 45<span class="card-text"></span></p>
-						<button data-id="6" data-price="12699" data-name="Nike AIR Big Серо-Золотой" class="btn2Cart">Купить</button>
+						<h5 class="card-title">Global</h5>
+						<h5 class="card-sub__title">Серия: NI</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 23 см, серия NI</p>
+						<p class="card-text-description">Цена: <span class="card-text">15466</span> руб.</p>
+						<button data-id="6" data-price="15466" data-name="Global Bread-knife 23cm NI" class="btn2Cart">Купить</button>
 					</div>
 				</div>
+
 			</div>
+
+			<div class="row justify-content-around">
+
+				<!-- Global - Нож кухонный для хлеба 21 см, серия NI -->
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="card__slider">
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/global/global-bread-ni-21cm-2.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/global/global-bread-ni-21cm-1.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/global/global-bread-ni-21-23cm-3.jpg">
+						</div>
+
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
+							<span class="card__slider-dot" data-slide="3"></span>
+						</div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Global</h5>
+						<h5 class="card-sub__title">Серия: NI</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 21 см, серия NI</p>
+						<p class="card-text-description">Цена: <span class="card-text">13362</span> руб.</p>
+						<button data-id="7" data-price="13363" data-name="Global Bread-knife 21cm NI" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+
+				<!-- Global - Нож кухонный для хлеба 22 см, серия UKON -->
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="card__slider">
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/global/global-bread-ukon-22cm-2.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/global/global-bread-ukon-22cm-1.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/global/global-bread-ukon-22cm-3.jpg">
+						</div>
+
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/global/global-bread-ukon-22cm-4.jpg">
+						</div>
+
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
+							<span class="card__slider-dot" data-slide="3"></span>
+							<span class="card__slider-dot" data-slide="4"></span>
+						</div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Global</h5>
+						<h5 class="card-sub__title">Серия: UKON</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 22 см, серия UKON</p>
+						<p class="card-text-description">Цена: <span class="card-text">15466</span> руб.</p>
+						<button data-id="8" data-price="15466" data-name="Global Bread-knife 22cm UKON" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+
+				<!-- Tefal - Нож кухонный для хлеба 20 см, серия ICE FORCE -->
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="card__slider">
+
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/tefal/tefal-bread-ice_force-20cm-1.webp">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/tefal/tefal-bread-ice_force-20cm-2.webp">
+						</div>
+
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/tefal/tefal-bread-ice_force-20cm-3.webp">
+						</div>
+
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
+							<span class="card__slider-dot" data-slide="3"></span>
+						</div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Tefal</h5>
+						<h5 class="card-sub__title">Серия: ICE FORCE</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 20 см, серия ICE FORCE</p>
+						<p class="card-text-description">Цена: <span class="card-text">1699</span> руб.</p>
+						<button data-id="9" data-price="1699" data-name="Tefal Bread-knife 20cm ICE FORCE" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+				
+			</div>
+			<div class="row justify-content-around">
+
+				<!-- Tefal - Нож кухонный для хлеба 20 см, серия Character -->
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="card__slider">
+
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/tefal/tefal-bread-character-20cm-3.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/tefal/tefal-bread-character-20cm-1.jpg">
+						</div>
+
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
+						</div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Tefal</h5>
+						<h5 class="card-sub__title">Серия: Character</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 20 см, серия Character</p>
+						<p class="card-text-description">Цена: <span class="card-text">1899</span> руб.</p>
+						<button data-id="10" data-price="1899" data-name="Tefal Bread-knife 20cm Character" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+
+				<!-- Tefal - Нож кухонный для хлеба 20 см, серия Essential -->
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="card__slider">
+
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/tefal/tefal-bread-essential-20cm-1.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/tefal/tefal-bread-essential-20cm-2.jpg">
+						</div>
+
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
+						</div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Tefal</h5>
+						<h5 class="card-sub__title">Серия: Essential</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 20 см, серия Essential</p>
+						<p class="card-text-description">Цена: <span class="card-text">890</span> руб.</p>
+						<button data-id="11" data-price="890" data-name="Tefal Bread-knife 20cm Essential" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+
+				<!-- Tefal - Нож кухонный для хлеба 20 см, серия Jamie Oliver -->
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="card__slider">
+
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/tefal/tefal-bread-jamie-oliver-20cm-1.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/tefal/tefal-bread-jamie-oliver-20cm-2.jpg">
+						</div>
+
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
+						</div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Tefal</h5>
+						<h5 class="card-sub__title">Серия: Jamie Oliver</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 20 см, серия Jamie Oliver</p>
+						<p class="card-text-description">Цена: <span class="card-text">1499</span> руб.</p>
+						<button data-id="12" data-price="1499" data-name="Tefal Bread-knife 20cm Jamie Oliver" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="cards-section-title cards-section__2">Ножи для нарезки</div>
+
+			<div class="row justify-content-around">
+
+				<!-- Tefal - Нож кухонный для хлеба 20 см, серия Jamie Oliver -->
+				<div class="card    col-md-3 bg-light border-dark m-2 p-2">
+					<div class="card__slider">
+
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/tefal/tefal-bread-jamie-oliver-20cm-1.jpg">
+						</div>
+							
+						<div class="card__slider-item">
+							<img class="card__slider-item-img img-fluid" src="img/storeimg/catalog/tefal/tefal-bread-jamie-oliver-20cm-2.jpg">
+						</div>
+
+						<button class="card__slider-previous" title="Предыдущая">&#10094;</button>
+						<button href="#" class="card__slider-next" title="Следующая">&#10095;</button>
+							
+						<div class="card__slider-dots">
+							<span class="card__slider-dot" data-slide="1"></span>
+							<span class="card__slider-dot" data-slide="2"></span>
+						</div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Tefal</h5>
+						<h5 class="card-sub__title">Серия: Jamie Oliver</h5>
+						<p class="card-text-description">Нож кухонный для хлеба 20 см, серия Jamie Oliver</p>
+						<p class="card-text-description">Цена: <span class="card-text">1499</span> руб.</p>
+						<button data-id="12" data-price="1499" data-name="Tefal Bread-knife 20cm Jamie Oliver" class="btn2Cart">Купить</button>
+					</div>
+				</div>
+
+			</div>
+
 		</div> <!-- .container -->
 		<!--  Блок с карточками товаров (конец)  -->
 
@@ -298,12 +622,29 @@
 		</div>
 
 		<!--  Cookie-alert  -->
-		<div class="cookie-alert invisible">
+
+		<!-- <div class="cookie-alert invisible">
 			<div class="cookie__text">Мы используем файлы cookie для наилучшего взаимодействия. Вы можете узнать больше о том, какие файлы cookie мы используем, в нашей <a href="https://yandex.ru/legal/cookies_policy/">политике использования файлов cookie.</a></div>
 			<div class="cookie__content">
 				<button class="cookie__close" id="cookie_alertClose">Принять Cookie</button>
 			</div>
-		</div>
+		</div> -->
+
+		<!-- Modal window -->
+
+		<section class="container">
+			<div class="modal-inner">
+				<div class="modal-contacts modal-window">
+					<div class="modal-contacts__body">
+						<div class="modal-contacts__title">Телефон:</div>
+						<div class="modal-contacts__text">+71234567891</div>
+						<div class="modal-contacts__title">Почта:</div>
+						<div class="modal-contacts__text">mail@gmail.com</div>
+					</div>
+					<div data-close=".modal-contacts" class="modal__close">X</div>
+				</div>
+			</div>
+		</section>
 
     </main>
 
@@ -351,7 +692,8 @@
 
 	<!--  Скрипты  -->
 	<script src="js-php/second-page/chatbot.js"></script>
-	<script src="js-php/second-page/slider.js"></script>
+	<script src="js-php/second-page/header-slider.js"></script>
+	<script src="js-php/second-page/card-slider.js"></script>
 	<script src="js-php/second-page/script.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>

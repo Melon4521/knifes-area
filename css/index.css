@@ -354,6 +354,7 @@ body._touch .menu__arrow {
     padding-top: 80px;
     width: 100%;
     height: 100vh;
+    min-height: 400px;
     background: url("../img/storeimg/main/fullscreen-image3.jpg");
     background-position: center;
     background-size: cover;
@@ -367,6 +368,7 @@ body._touch .menu__arrow {
     background-color: rgba(0, 0, 0, .5);
     width: 100%;
     height: inherit;
+    min-height: inherit;
     transition: all .6s ease;
 }
 
@@ -398,12 +400,12 @@ body._touch .hello-img__layer {
     font-weight: 500;
     font-family: 'Bitter', serif;
     letter-spacing: 13px;
+    line-height: 170%;
 }
 
 .hello-img__sub-title {
     transition: all .7s;
     font-weight: 400;
-    padding-top: 20px;
     font-size: 20px;
     width: 100%;
     letter-spacing: 5px;
@@ -468,6 +470,7 @@ body._touch .hello-img__layer {
     line-height: 1.5;
     font-size: 18px;
     font-weight: 400;
+    text-align: justify;
 }
 
 .about-us__text._scroll-anim__active {
@@ -617,6 +620,7 @@ body._touch .hello-img__layer {
     font-size: 18px;
     font-weight: 400;
     line-height: 140%;
+    text-align: justify;
 }
 
 /* ================================================= */
@@ -673,10 +677,11 @@ body._touch .hello-img__layer {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 20px;
     padding: 10px;
     transition: all .3s ease;
+    font-size: 20px;
     color: #fff;
+    font-weight: 500;
 }
 
 .modal__close:hover {
@@ -857,6 +862,11 @@ body._touch .hello-img__layer {
 }
 
 @media (max-width: 510px) {
+
+    .hello-img__sub-title {
+        padding-top: 20px;
+    }
+
     .footer__item{
         width: 50%;
         padding-bottom: 15px;
